@@ -1,0 +1,24 @@
+# created by virtualenv automatically
+.venv/
+
+.env
+
+dist/
+
+pycache/
+
+.vscode/
+
+asciinema/
+
+.idea/
+
+__pycache__
+
+.coverage
+
+cc-test-reporter
+
+coverage.xml
+
+myenv/
