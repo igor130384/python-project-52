@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load django_bootstrap5 %}
+
+{% block content %}
+
+
+    <div class="container wrapper flex-grow-1">
+
+  <div class="alert alert-{{ message.tags }}">
+    {{ message }}
+  </div>
+
+
+    {% block title %}{% trans 'Login' %}{% endblock %}
+
+<form action="{% url 'login' %}" method="post">
+
+  {% bootstrap_form form %}
+    <button class="btn btn-primary">{% translate "Log in" %}</button>
+     {% csrf_token %}
+</form>
+
+    </div>
+
+{% endblock %}

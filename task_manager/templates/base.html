@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
+<html lang="{{ LANGUAGE_CODE }}">
+
+{% load django_bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+<head>
+        <meta charset="UTF-8">
+        <title>
+            {% block title %}
+            {% endblock %}
+        </title>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <header>
+        {% include 'navbar.html' %}
+    </header>
+
+    <div class="container wrapper flex-grow-1">
+        <div class="alert-{{ message.tags }}" role="alert">
+            {% bootstrap_messages %}
+        </div>
+            {% block content %}
+            {% endblock %}
+    </div>
+     <footer>
+      <div class="container my-5 pt-4 border-top">
+        <a target="_blank" href="https://ru.hexlet.io">Hexlet</a>
+      </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block title %}{% trans 'Status' %}{% endblock %}
+
+{% block content %}
+
+      <h1 class="my-4">{% trans 'Status' %}</h1>
+<a class="btn btn-primary mb-3" href="{% url 'status_create'%}">Создать статус</a>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>{% trans 'Name' %}</th>
+              <th class="col-6">{% trans 'Date of creation' %}</th>
+
+            </tr>
+          </thead>
+          <tbody>
+
+          {% for stat in status %}
+
+            <tr class="align-baseline">
+              <td>{{ stat.id }}</td>
+              <td>{{ stat.name }}</td>
+              <td>{{ stat.created_at|date:"d.m.Y H:i" }}</td>
+              <td>
+                <a href="{% url 'status_update' pk=stat.pk %}">{% trans 'Edit' %}</a>
+                <br>
+                <a href="{% url 'status_delete' pk=stat.pk %}" >{% trans 'Delete' %}</a>
+              </td>
+            </tr>
+
+
+          {% endfor %}
+
+
+
+     </tbody>
+        </table>
+
+{% endblock %}

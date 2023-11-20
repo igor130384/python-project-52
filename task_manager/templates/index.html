@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+{% load i18n %}
+{% load django_bootstrap5 %}
+{% block title %}{% trans 'Task manager' %}{% endblock %}
+{% block content %}
+<body>
+<div class="bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
+    <div class="my-3 py-3">
+      <h2 class="display-5">{% trans "Task Manager" %}</h2>
+      <p class="lead">{% trans "Organize and get the prize" %}</p>
+    </div>
+    <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+  </div>
+
+</body>
+{% endblock %}
+

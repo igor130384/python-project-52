@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block title %}{% trans 'Users' %}{% endblock %}
+
+{% block content %}
+
+      <h1 class="my-4">{% trans 'Users' %}</h1>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th>ID</th>
+              <th>{% trans 'Username' %}</th>
+              <th class="col-6">{% trans 'Full name' %}</th>
+              <th>{% trans 'Date of creation' %}</th>
+              <th></th>>
+            </tr>
+          </thead>
+          <tbody>
+
+
+          {% for user in users %}
+
+            <tr class="align-baseline">
+              <td>{{ user.id }}</td>
+              <td>{{ user.username }}</td>
+              <td>{{ user.first_name }} {{ user.last_name }}</td>
+              <td>{{ user.date_joined|date:"d.m.Y H:i" }}</td>
+              <td>
+                <a href="{% url 'edit' pk=user.id %}" >{% trans 'Edit' %}</a>
+                <br>
+                <a href="{% url 'delete' pk=user.id %}" >{% trans 'Delete' %}</a>
+              </td>
+            </tr>
+
+          {% endfor %}
+
+
+          </tbody>
+        </table>
+
+{% endblock %}
