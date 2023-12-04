@@ -18,6 +18,9 @@ PORT ?= 8000
 start:
 	poetry run gunicorn task_manager.wsgi:application
 
+migration:
+	poetry run python manage.py makemigrations
+	poetry run python manage.py migrate
 
 check:
 	poetry run flake8 task_manager/
