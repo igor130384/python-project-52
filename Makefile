@@ -7,6 +7,11 @@ dev:
 build:
 	./build.sh
 
+messagesparse:
+		poetry run django-admin makemessages -l ru
+
+transmessages:
+		poetry run django-admin compilemessages
 
 PORT ?= 8000
 

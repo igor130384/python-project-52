@@ -1,11 +1,11 @@
 from django.urls import path
 
-from task_manager import views
-from task_manager.statuses.views import IndexStatusView, StatusCreateView, StatusUpdateView, StatusDeleteView
+from task_manager.tasks.views import IndexTaskView, TasksCreateView, TaskDetailView, TaskDeleteView, TaskUpdateView
 
 urlpatterns = [
-    path('', IndexStatusView.as_view(), name="tasks_index"),
-    # path('create/', StatusCreateView.as_view(), name="status_create"),
-    # path("<int:pk>/update/", StatusUpdateView.as_view(), name="status_update"),
-    # path("<int:pk>/delete/", StatusDeleteView.as_view(), name="status_delete"),
+    path('', IndexTaskView.as_view(), name="tasks_index"),
+    path('create/', TasksCreateView.as_view(), name="tasks_create"),
+    path("<int:pk>/update/", TaskUpdateView.as_view(), name="tasks_update"),
+    path("<int:pk>/delete/", TaskDeleteView.as_view(), name="tasks_delete"),
+    path("<int:pk>/", TaskDetailView.as_view(), name="tasks_detail"),
 ]

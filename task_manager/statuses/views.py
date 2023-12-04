@@ -65,7 +65,7 @@ class StatusDeleteView(LoginRequiredMixin, DeleteView):
         except ProtectedError:
             messages.error(
                 self.request,
-                _("Status is used by task"),
+                _("Status is used by tasks"),
             )
         else:
             messages.success(

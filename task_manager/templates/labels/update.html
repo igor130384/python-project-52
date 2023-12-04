@@ -3,14 +3,14 @@
 {% load django_bootstrap5 %}
 
 {% block content %}
-<h1 class="display-4 fw-bold mt-4">{% translate "Update user" %}</h1>
+<h1 class="display-4 fw-bold mt-4">{% translate "Update labels" %}</h1>
 
               <div
               class=class="navbar-nav"
               >
             </div>
             <div class="col-12 col-md-8 mt-3 mt-mb-0">
-                <form action="{% url 'users_update' pk=user.id %}" method="post">
+                <form action="{% url 'labels_update' pk=label.id %}" method="post">
                     {% csrf_token %}
                     {% bootstrap_form form %}
                 <button class="btn btn-primary">{% translate "Update" %}</button>

@@ -20,10 +20,10 @@
           <a class="nav-link" href="{% url 'status_index' %}">{% trans 'Statuses' %}</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/">{% trans 'Labels' %}</a>
+          <a class="nav-link" href="{%url 'label_index' %}">{% trans 'Labels' %}</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="/">{% trans 'Tasks' %}</a>
+          <a class="nav-link" href="{% url 'tasks_index' %}">{% trans 'Tasks' %}</a>
         </li>
 
         {% endif %}

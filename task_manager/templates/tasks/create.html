@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% load i18n %}
+
+{% block content %}
+    <div class="container wrapper flex-grow-1">
+
+
+
+      <h1 class="my-4">
+
+{% translate "Create Task" %}
+
+      </h1>
+
+<form action="{% url 'tasks_create' %}" method="post">
+   {% bootstrap_form form %}
+    {% csrf_token %}
+     <button class="btn btn-primary">{% translate "Create" %}</button>
+
+</form>
+
+    </div>
+{% endblock %}
