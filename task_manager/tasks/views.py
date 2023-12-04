@@ -8,14 +8,14 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from django.utils.translation import gettext as _
-
+from django_filters.views import FilterView
 
 from .filters import TaskFilter
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 
 
-class IndexTaskView(ListView):
+class IndexTaskView(ListView, FilterView):
 
     def get(self, request, *args, **kwargs):
         tasks = Task.objects.all()

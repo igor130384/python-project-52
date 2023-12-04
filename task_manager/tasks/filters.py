@@ -32,7 +32,7 @@ class TaskFilter(django_filters.FilterSet):
     def get_self_tasks(self, queryset, name, value):
         if value is not None:
             return queryset
-        return queryset.filter(creator=self.request.user)
+        return queryset.filter(creator_id=self.request.user.pk)
 
     class Meta:
         model = Task
