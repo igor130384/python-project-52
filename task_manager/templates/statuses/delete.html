@@ -3,23 +3,17 @@
 {% load i18n %}
 {% block content %}
 
-<div class="d-flex flex-column flex-grow-1 align-items-center">
-    <div class="m-4 p-4 d-flex flex-column bg-dark border border-light border-2 rounded text-white shadow"
-        style="min-width: 20%; max-width: 80%;">
+<div class="my-4">
+
         <h3>{% trans 'Delete profile' %}</h3>
         <p>{% trans 'Are you sure? Do you want to delete your profile?' %}</p>
          <ul class="navbar-nav">
 
             <form action="{% url 'status_delete' pk=status.id %}" method="post" class="d-flex">
                 {% csrf_token %}
-                <input type="submit" value="{% trans 'Yes, delete' %}" class="my-3 align-items-start btn btn-warning">
+                <input type="submit" value="{% trans 'Yes, delete' %}" class="btn btn-danger">
             </form>
          </ul>
-            <form action="{% url 'index' %}" method="get" class="d-flex">
-                {% csrf_token %}
-                <input type="submit" value="{% trans 'Cancel' %}" class="my-3 align-items-start btn btn-outline-light">
-            </form>
         </div>
-    </div>
-</div>
+
 {% endblock %}

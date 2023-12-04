@@ -10,7 +10,7 @@ from django.views.generic import ListView, CreateView, DetailView, DeleteView, U
 from django.utils.translation import gettext as _
 from django_filters.views import FilterView
 
-from .filters import TaskFilter
+from task_manager.tasks.filters import TaskFilter
 from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 
@@ -20,7 +20,7 @@ class IndexTaskView(ListView, FilterView):
     def get(self, request, *args, **kwargs):
         tasks = Task.objects.all()
         tasks_filtered = TaskFilter(request.GET, queryset=tasks)
-        return render(request, 'tasks/task.html', {'filter': tasks_filtered})
+        return render(request, 'tasks/task.html', {'filter': tasks_filtered, 'tasks': tasks})
 
 
 class TasksCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
