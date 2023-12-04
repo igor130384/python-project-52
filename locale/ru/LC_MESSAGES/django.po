@@ -205,7 +205,7 @@ msgstr "Задачи"
 #: task_manager/templates/navbar.html:38
 #: task_manager/templates/users/create.html:6
 msgid "Sing up"
-msgstr "Войти"
+msgstr "Регистрация"
 
 #: task_manager/templates/navbar.html:44
 msgid "Logout"
