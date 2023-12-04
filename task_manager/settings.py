@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+import dj_database_url
 # import dj_database_url
 from dotenv import load_dotenv
 
@@ -104,19 +105,20 @@ WSGI_APPLICATION = "task_manager.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # Feel free to alter this value to suit your needs.
-#         default="postgresql://user1:igor130384@localhost:5432/hex",
-#         conn_max_age=600
-#     )
-# }
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        # default="postgresql://user1:igor130384@localhost:5432/hex",
+        default='sqlite:///db.sqlite3',
+        conn_max_age=600
+    )
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 AUTH_USER_MODEL = 'users.User'
