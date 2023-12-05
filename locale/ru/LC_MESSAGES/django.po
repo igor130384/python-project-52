@@ -36,7 +36,7 @@ msgstr "Метка успешно изменена"
 
 #: task_manager/labels/views.py:50
 msgid "Labels successfully deleted"
-msgstr "Метка успешно изменена"
+msgstr "Метка успешно удалена"
 
 #: task_manager/statuses/views.py:38
 msgid "Status is successfully created"

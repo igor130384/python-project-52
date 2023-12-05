@@ -44,9 +44,9 @@ class LabelsUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
         return super().form_valid(form)
 
 
-class LabelsDeleteView(LoginRequiredMixin, DeleteView):
+class LabelsDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     model = Label
     success_url = reverse_lazy("label_index")
-    success_message = _("Labels successfully deleted")
     template_name = "labels/delete.html"
+    success_message = _("Labels successfully deleted")
 # Create your views here.
