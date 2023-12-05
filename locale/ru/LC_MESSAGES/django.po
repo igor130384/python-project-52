@@ -209,7 +209,7 @@ msgstr "Регистрация"
 
 #: task_manager/templates/navbar.html:44
 msgid "Logout"
-msgstr "Выйти"
+msgstr "Выход"
 
 #: task_manager/templates/statuses/create.html:12
 msgid "Create Status"
