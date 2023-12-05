@@ -290,7 +290,7 @@ msgstr "Невозможно удалить пользователя, так к�
 
 #: task_manager/users/views.py:39
 msgid "User is successfully created"
-msgstr "Пользователь успешно создан"
+msgstr "Пользователь успешно зарегистророван"
 
 #: task_manager/users/views.py:49
 msgid "User successfully updated"
