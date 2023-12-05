@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-05 07:23+0000\n"
+"POT-Creation-Date: 2023-12-05 08:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
 #: task_manager/labels/forms.py:7 task_manager/statuses/forms.py:7
-#: task_manager/templates/labels/label.html:15
+#: task_manager/tasks/forms.py:11 task_manager/templates/labels/label.html:15
 #: task_manager/templates/statuses/status.html:15
 msgid "Name"
 msgstr "Имя"
@@ -34,7 +34,7 @@ msgstr "Метка успешно создана"
 msgid "Labels successfully update"
 msgstr "Метка успешно изменена"
 
-#: task_manager/labels/views.py:50
+#: task_manager/labels/views.py:51
 msgid "Labels successfully deleted"
 msgstr "Метка успешно удалена"
 
@@ -58,20 +58,30 @@ msgstr "Статус успешно удален"
 msgid "Only own tasks"
 msgstr "Только свои задачи"
 
-#: task_manager/tasks/filters.py:19
+#: task_manager/tasks/filters.py:19 task_manager/tasks/forms.py:13
 #: task_manager/templates/statuses/status.html:5
 #: task_manager/templates/statuses/status.html:9
 #: task_manager/templates/tasks/detail.html:25
 msgid "Status"
 msgstr "Статусы"
 
-#: task_manager/tasks/filters.py:23
+#: task_manager/tasks/filters.py:23 task_manager/tasks/forms.py:14
 msgid "Executor"
 msgstr "Исполнитель"
 
 #: task_manager/tasks/filters.py:28
 msgid "Label"
 msgstr "Метка"
+
+#: task_manager/tasks/forms.py:12
+msgid "Description"
+msgstr "Описание"
+
+#: task_manager/tasks/forms.py:15 task_manager/templates/labels/label.html:5
+#: task_manager/templates/labels/label.html:9
+#: task_manager/templates/navbar.html:23
+msgid "Labels"
+msgstr "Метки"
 
 #: task_manager/tasks/views.py:32
 msgid "Task successfully created"
@@ -131,12 +141,6 @@ msgstr "Вы уверены? Вы хотите удалить свой проф�
 #: task_manager/templates/users/delete.html:14
 msgid "Yes, delete"
 msgstr "Да, удалить"
-
-#: task_manager/templates/labels/label.html:5
-#: task_manager/templates/labels/label.html:9
-#: task_manager/templates/navbar.html:23
-msgid "Labels"
-msgstr "Метки"
 
 #: task_manager/templates/labels/label.html:16
 #: task_manager/templates/statuses/status.html:16
