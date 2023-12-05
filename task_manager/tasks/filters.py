@@ -10,21 +10,25 @@ from task_manager.users.models import User
 class TaskFilter(django_filters.FilterSet):
     self_tasks = django_filters.BooleanFilter(
         field_name="creator",
+        label_suffix="",
         method="get_self_tasks",
         label=_("Only own tasks"),
-        widget=CheckboxInput,
+        widget=CheckboxInput(),
     )
     status = django_filters.ModelChoiceFilter(
         label=_('status'),
+        label_suffix="",
         queryset=Status.objects.order_by('name'),
     )
     executor = django_filters.ModelChoiceFilter(
         label=_('Executor'),
+        label_suffix="",
         queryset=User.objects.order_by('first_name', 'last_name'),
     )
     label = django_filters.ModelChoiceFilter(
         field_name="labels",
         label=_("Label"),
+        label_suffix="",
         queryset=Label.objects.all(),
     )
 
