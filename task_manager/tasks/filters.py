@@ -15,7 +15,7 @@ class TaskFilter(django_filters.FilterSet):
         widget=CheckboxInput,
     )
     status = django_filters.ModelChoiceFilter(
-        label=_('Status'),
+        label=_('status'),
         queryset=Status.objects.order_by('name'),
     )
     executor = django_filters.ModelChoiceFilter(
