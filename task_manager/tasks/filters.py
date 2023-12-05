@@ -1,5 +1,4 @@
 import django_filters
-from django import forms
 from django.forms import CheckboxInput
 from django.utils.translation import gettext_lazy as _
 from task_manager.statuses.models import Status
@@ -13,15 +12,15 @@ class TaskFilter(django_filters.FilterSet):
         field_name="creator",
         method="get_self_tasks",
         label=_("Only own tasks"),
-        widget=forms.CheckboxInput(),
+        widget=CheckboxInput,
     )
     status = django_filters.ModelChoiceFilter(
         label=_('Status'),
-        queryset=Status.objects.all(),
+        queryset=Status.objects.order_by('name'),
     )
     executor = django_filters.ModelChoiceFilter(
         label=_('Executor'),
-        queryset=User.objects.all(),
+        queryset=User.objects.order_by('first_name', 'last_name'),
     )
     label = django_filters.ModelChoiceFilter(
         field_name="labels",
@@ -29,10 +28,12 @@ class TaskFilter(django_filters.FilterSet):
         queryset=Label.objects.all(),
     )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.user = None
+
     def get_self_tasks(self, queryset, name, value):
-        if value is not None:
-            return queryset
-        return queryset.filter(creator_id=self.request.user.pk)
+        return queryset.filter(author_id=self.user) if value else queryset
 
     class Meta:
         model = Task

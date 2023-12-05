@@ -1,4 +1,3 @@
-
 from django.db import models
 
 from task_manager.labels.models import Label
@@ -13,9 +12,14 @@ class Task(models.Model):
     author = models.ForeignKey(User, null=True, on_delete=models.PROTECT, related_name='author')
     executor = models.ForeignKey(User, blank=True,
                                  null=True, on_delete=models.PROTECT, related_name='executor')
-    labels = models.ManyToManyField(Label,  blank=True,)
+    labels = models.ManyToManyField(Label, blank=True, )
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
+
+
+class TaskLabel(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    label = models.ForeignKey(Label, on_delete=models.RESTRICT)
 # Create your models here.
