@@ -266,11 +266,11 @@ msgstr "Изменить задачу"
 
 #: task_manager/templates/users/create.html:10
 msgid "Sign up"
-msgstr "Зарегистрироваться"
+msgstr "Регистрация"
 
 #: task_manager/templates/users/create.html:15
 msgid "Registers"
-msgstr "Зарегистрироваться"
+msgstr "Зарегистрировать"
 
 #: task_manager/templates/users/update.html:6
 msgid "Update user"
