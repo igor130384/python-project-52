@@ -38,7 +38,7 @@ msgstr "Статус успешно создан"
 
 #: task_manager/statuses/views.py:49
 msgid "Status successfully update"
-msgstr "Статус успешно создан"
+msgstr "Статус успешно изменен"
 
 #: task_manager/statuses/views.py:68
 msgid "Status is used by tasks"
