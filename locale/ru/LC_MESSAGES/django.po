@@ -184,7 +184,7 @@ msgstr "Вход"
 
 #: task_manager/templates/login.html:21
 msgid "Log in"
-msgstr "Регистрация"
+msgstr "Войти"
 
 #: task_manager/templates/navbar.html:14
 #: task_manager/templates/users/users.html:5

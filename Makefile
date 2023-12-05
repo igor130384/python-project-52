@@ -18,6 +18,10 @@ PORT ?= 8000
 start:
 	poetry run gunicorn task_manager.wsgi:application
 
+test:
+	 python3 manage.py test
+
+
 migration:
 	poetry run python manage.py makemigrations
 	poetry run python manage.py migrate
