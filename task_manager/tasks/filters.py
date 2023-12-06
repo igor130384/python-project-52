@@ -32,10 +32,6 @@ class TaskFilter(django_filters.FilterSet):
         queryset=Label.objects.all(),
     )
 
-    # def __init__(self, *args, **kwargs):
-    #     self.user = None
-    #     super().__init__(*args, **kwargs)
-
     def get_self_tasks(self, queryset, name, value):
         return queryset.filter(author=self.request.user.pk) if value else queryset
 

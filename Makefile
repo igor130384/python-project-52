@@ -26,6 +26,9 @@ migration:
 	poetry run python manage.py makemigrations
 	poetry run python manage.py migrate
 
+test:
+	python3 manage.py test
+
 lint:
 	poetry run flake8 task_manager
 
