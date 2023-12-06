@@ -27,10 +27,15 @@ migration:
 	poetry run python manage.py migrate
 
 test:
-	python3 manage.py test
+	poetry run python3 manage.py test
 
 lint:
 	poetry run flake8 task_manager
+
+test-coverage:
+	poetry run coverage run manage.py test
+	poetry run coverage report
+	poetry run coverage xml
 
 check:
 	poetry run flake8 task_manager/
