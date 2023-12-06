@@ -7,13 +7,7 @@ class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = ["name", "description", "status", "executor", "labels"]
-        labels = {
-            'name': _('Name'),
-            'description': _('Description'),
-            'status': _('status'),
-            'executor': _('Executor'),
-            'labels': _('Labels'),
-        }
+
 
 
 
