@@ -9,7 +9,7 @@ from task_manager.users.models import User
 
 class TaskFilter(django_filters.FilterSet):
     self_tasks = django_filters.BooleanFilter(
-        field_name="creator",
+        field_name="author",
         label_suffix="",
         method="get_self_tasks",
         label=_("Only own tasks"),
@@ -32,12 +32,12 @@ class TaskFilter(django_filters.FilterSet):
         queryset=Label.objects.all(),
     )
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.user = None
+    # def __init__(self, *args, **kwargs):
+    #     self.user = None
+    #     super().__init__(*args, **kwargs)
 
     def get_self_tasks(self, queryset, name, value):
-        return queryset.filter(author_id=self.user) if value else queryset
+        return queryset.filter(author=self.request.user.pk) if value else queryset
 
     class Meta:
         model = Task

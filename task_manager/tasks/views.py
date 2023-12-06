@@ -4,9 +4,9 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.db.models import ProtectedError
 from django.http import HttpResponseRedirect
 
-from django.shortcuts import render
+
 from django.urls import reverse_lazy
-from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
+from django.views.generic import CreateView, DetailView, DeleteView, UpdateView
 from django.utils.translation import gettext as _
 from django_filters.views import FilterView
 
@@ -15,12 +15,11 @@ from task_manager.tasks.forms import TaskForm
 from task_manager.tasks.models import Task
 
 
-class IndexTaskView(ListView, FilterView):
-
-    def get(self, request, *args, **kwargs):
-        tasks = Task.objects.all()
-        tasks_filtered = TaskFilter(request.GET, queryset=tasks)
-        return render(request, 'tasks/task.html', {'filter': tasks_filtered, 'tasks': tasks})
+class IndexTaskView(LoginRequiredMixin, FilterView):
+    model = Task
+    context_object_name = 'tasks'
+    template_name = 'tasks/task.html'
+    filterset_class = TaskFilter
 
 
 class TasksCreateView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
