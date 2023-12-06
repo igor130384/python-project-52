@@ -72,7 +72,7 @@ class TaskUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     success_message = _("Task successfully update")
 
     def form_valid(self, form):
-        form.instance.author = self.request.user
+        form.save()
         return super().form_valid(form)
 
 # Create your views here.
