@@ -6,7 +6,7 @@ from django.utils.translation import gettext as _
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, UpdateView, DeleteView
 
 from . import forms
 from .forms import NewUserCreationForm

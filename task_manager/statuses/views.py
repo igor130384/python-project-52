@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
 from django.urls import reverse_lazy
 from django.views import View
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, UpdateView, DeleteView
 
 from task_manager.statuses import forms
 from task_manager.statuses.forms import StatusForm
