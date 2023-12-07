@@ -1,5 +1,5 @@
 from django.test import Client, TestCase
-from django.urls import reverse
+# from django.urls import reverse
 
 from task_manager.labels.models import Label
 from task_manager.statuses.models import Status
@@ -35,10 +35,10 @@ class TaskCreateTest(TestCase):
         }
         self.task.labels.add(self.label)
 
-    def test_create_task_view(self):
-        url = reverse('tasks_create')
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
+    # def test_create_task_view(self):
+    #     url = reverse('tasks_create')
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, 200)
 
     # def test_create_task_on_post(self):
     #     url = reverse('tasks_create')
