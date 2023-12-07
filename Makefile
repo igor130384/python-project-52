@@ -33,7 +33,7 @@ lint:
 test-coverage:
 	poetry run coverage run manage.py test
 	poetry run coverage report
-	poetry run coverage xml
+	poetry run coverage xml -o coverage.xml
 
 check:
-	poetry run flake8 task_manager/
+	poetry check
