@@ -1,5 +1,5 @@
 from django.test import Client, TestCase
-from django.urls import reverse
+# from django.urls import reverse
 from task_manager.statuses.models import Status
 from task_manager.users.models import User
 
@@ -35,6 +35,6 @@ class StatusCreateTest(TestCase):
     #     form_data = {'name': 'old_name', }
     #     response = self.client.post(url, form_data)
     #     self.assertEqual(response.url, reverse('status_index'))
-    #
+
 
 # Create your tests here.

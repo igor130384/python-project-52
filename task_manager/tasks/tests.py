@@ -35,11 +35,11 @@ class TaskCreateTest(TestCase):
         }
         self.task.labels.add(self.label)
 
-    # def test_create_task_view(self):
-    #     url = reverse('tasks_create')
-    #     response = self.client.get(url)
-    #     self.assertEqual(response.status_code, 200)
-    #
+    def test_create_task_view(self):
+        url = reverse('tasks_create')
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 200)
+
     # def test_create_task_on_post(self):
     #     url = reverse('tasks_create')
     #     response = self.client.post(url, self.task_form_data)

@@ -1,7 +1,7 @@
 from django.test import Client, TestCase
-from django.urls import reverse
+# from django.urls import reverse
 from task_manager.users.forms import NewUserCreationForm
-from task_manager.users.models import User
+# from task_manager.users.models import User
 
 
 class UserCreateTest(TestCase):
