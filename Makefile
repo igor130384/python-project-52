@@ -30,6 +30,9 @@ test:
 lint:
 	poetry run flake8 task_manager
 
+shell:
+	poetry run python manage.py shell
+
 test-coverage:
 	poetry run coverage run manage.py test
 	poetry run coverage report

@@ -1,7 +1,7 @@
 # created by virtualenv automatically
 .venv/
 
-.env
+task_manager/.env
 
 dist/
 
