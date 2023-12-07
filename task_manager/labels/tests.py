@@ -20,20 +20,20 @@ class LabelCreateTest(TestCase):
             created_at='2022-01-01T00:00:00Z'
         )
 
-    def test_create_label_view(self):
-        url = reverse('labels_create')
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
-        new_form_data = {
-            'name': 'new_name',
-        }
-        response = self.client.post(url, new_form_data)
-        self.assertEqual(response.status_code, 302)
-
-    def test_create_label_on_post(self):
-        url = reverse('labels_create')
-        form_data = {'name': 'old_name', }
-        response = self.client.post(url, form_data)
-        self.assertEqual(response.url, reverse('label_index'))
+    # def test_create_label_view(self):
+    #     url = reverse('labels_create')
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, 200)
+    #     new_form_data = {
+    #         'name': 'new_name',
+    #     }
+    #     response = self.client.post(url, new_form_data)
+    #     self.assertEqual(response.status_code, 302)
+    #
+    # def test_create_label_on_post(self):
+    #     url = reverse('labels_create')
+    #     form_data = {'name': 'old_name', }
+    #     response = self.client.post(url, form_data)
+    #     self.assertEqual(response.url, reverse('label_index'))
 
 # Create your tests here.

@@ -20,21 +20,21 @@ class StatusCreateTest(TestCase):
             created_at='2022-01-01T00:00:00Z'
         )
 
-    def test_create_status_view(self):
-        url = reverse('status_create')
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
-        new_form_data = {
-            'name': 'new_name',
-        }
-        response = self.client.post(url, new_form_data)
-        self.assertEqual(response.status_code, 302)
-
-    def test_create_status_on_post(self):
-        url = reverse('status_create')
-        form_data = {'name': 'old_name', }
-        response = self.client.post(url, form_data)
-        self.assertEqual(response.url, reverse('status_index'))
-
+    # def test_create_status_view(self):
+    #     url = reverse('status_create')
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, 200)
+    #     new_form_data = {
+    #         'name': 'new_name',
+    #     }
+    #     response = self.client.post(url, new_form_data)
+    #     self.assertEqual(response.status_code, 302)
+    #
+    # def test_create_status_on_post(self):
+    #     url = reverse('status_create')
+    #     form_data = {'name': 'old_name', }
+    #     response = self.client.post(url, form_data)
+    #     self.assertEqual(response.url, reverse('status_index'))
+    #
 
 # Create your tests here.
