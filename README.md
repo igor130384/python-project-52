@@ -8,7 +8,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/82b87728948959f41078/test_coverage)](https://codeclimate.com/github/igor130384/python-project-52/test_coverage)
 
 ### APP Task_Manager
-[![Click here](https://task-manager-7ihp.onrender.com)](https://task-manager-7ihp.onrender.com)
+[![APP Task_Manager](https://task-manager-7ihp.onrender.com)](https://task-manager-7ihp.onrender.com)
 
 Инструкция по установке
 
